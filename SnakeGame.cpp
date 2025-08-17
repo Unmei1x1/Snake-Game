@@ -1,7 +1,8 @@
 #include <iostream>
-#include <conio.h>
-#include <windows.h>
 #include <vector>
+#include <chrono>
+#include <thread>
+#include <conio.h>
 using namespace std;
 bool gameOver;
 int width = 20;
@@ -65,7 +66,6 @@ void Input() {
 void Logic() {
     pair<int, int> prev = {x, y};
     tail.insert(tail.begin(), prev);
-
     if (tail.size() > tailLength)
         tail.pop_back();
     switch (dir) {
@@ -93,7 +93,7 @@ int main() {
         Draw();
         Input();
         Logic();
-        Sleep(100);
+        this_thread::sleep_for(chrono::milliseconds(100));
     }
     return 0;
 }
