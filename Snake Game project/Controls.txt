@@ -1,0 +1,4 @@
+Use W,A,S,D to move
+X to end game
+Eat F to grow
+Hitting self results in gameover
